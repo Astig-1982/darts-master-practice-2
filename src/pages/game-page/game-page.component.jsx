@@ -10,7 +10,7 @@ const gamePage = ({ currentTarget, theName }) => {
     console.log(currentTarget)
     return(
         <div>
-            <h2>Name: {theName}</h2>
+            <h2>Game On {theName}</h2>
             <h2>Target {currentTarget}</h2>
         </div>
     );
