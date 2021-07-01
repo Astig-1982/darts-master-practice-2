@@ -1,34 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import './choose-target.styles.css';
-import { setCurrentTarget } from '../../redux/target/target.actions';
 
-const chooseTarget = () => {
+import { allTargets } from '../../redux/target/target.selectors';
+import { setCurrentTarget } from '../../redux/target/target.actions';
+import { selectCurrentTarget } from '../../redux/target/target.selectors';
+import TheTarget from '../../components/theTarget/the-target.component';
+
+
+
+const chooseTarget = ({ allTargets, currentTarget }) => {
+    console.log(allTargets)
+    console.log(currentTarget)
     return(
         <div>
             <h2>Choose Target</h2>
             <div className='targets'>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>6</span>
-                <span>7</span>
-                <span>8</span>
+                {allTargets.map((theTarget) => (
+                    <TheTarget key={theTarget} theTarget={theTarget} />
+                ))}
             </div>
+            <div>{currentTarget}</div>
+            <Link to='/game-page'>
+                <button>Start the game</button>
+            </Link>
         </div>
     );
 };
+
+const mapStateToProps = createStructuredSelector({
+    allTargets: allTargets,
+    currentTarget: selectCurrentTarget
+ });
 
 const mapDispatchToProps = dispatch => ({
     setCurrentTarget: target => dispatch(setCurrentTarget(target))  
 });
 
 export default connect(
-    null, 
+    mapStateToProps, 
     mapDispatchToProps
     )(chooseTarget);
 

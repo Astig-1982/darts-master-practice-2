@@ -7,5 +7,12 @@ export const selectCurrentTarget = createSelector(
     target => target.currentTarget
 );
 
-export default selectCurrentTarget;
+export const allTargets = createSelector(
+    [selectTarget],
+    target => target.allTargets
+)
 
+//export const selectTheTarget = createSelector(
+//    [selectCurrentTarget],
+//    theTarget => document.querySelector(theTarget).value
+//);
