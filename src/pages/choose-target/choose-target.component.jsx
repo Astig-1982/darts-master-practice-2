@@ -5,16 +5,22 @@ import { createStructuredSelector } from 'reselect';
 
 import './choose-target.styles.css';
 
-import { allTargets } from '../../redux/target/target.selectors';
 import { setCurrentTarget } from '../../redux/target/target.actions';
+
+import { allTargets } from '../../redux/target/target.selectors';
 import { selectCurrentTarget } from '../../redux/target/target.selectors';
+import { selectTheName } from '../../redux/name/name.selectors';
+
 import TheTarget from '../../components/theTarget/the-target.component';
+import SelectName from '../../components/select-name/select-name.component';
 
 
 
-const chooseTarget = ({ allTargets, currentTarget }) => {
+const chooseTarget = ({ allTargets, currentTarget, theName }) => {
+    console.log(theName) 
     return(
         <div className='choose-target-div'>
+            <SelectName />
             <h2>Choose Target</h2>
             <div className='targets'>
                 {allTargets.map((theTarget) => (
@@ -31,7 +37,8 @@ const chooseTarget = ({ allTargets, currentTarget }) => {
 
 const mapStateToProps = createStructuredSelector({
     allTargets: allTargets,
-    currentTarget: selectCurrentTarget
+    currentTarget: selectCurrentTarget,
+    theName: selectTheName 
  });
 
 const mapDispatchToProps = dispatch => ({
