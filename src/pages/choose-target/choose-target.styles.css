@@ -1,0 +1,11 @@
+.choose-target-div {
+    text-align: center;
+}
+
+.targets {
+    margin-bottom: .5rem;
+}
+
+.current-target {
+    margin-bottom: 2rem;
+}

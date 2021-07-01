@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './the-target.styles.css';
+
 import { setCurrentTarget } from '../../redux/target/target.actions';
 
 const TheTarget = ({ theTarget, setCurrentTarget }) => {
-    console.log(theTarget)
     return(
-        <div className='target' onClick={() => setCurrentTarget(theTarget)}>{theTarget}</div>
+        <div className='target-holder' onClick={() => setCurrentTarget(theTarget)}><span className='target'>{theTarget}</span></div>
     );
 };
 

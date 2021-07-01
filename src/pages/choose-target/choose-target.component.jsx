@@ -13,17 +13,15 @@ import TheTarget from '../../components/theTarget/the-target.component';
 
 
 const chooseTarget = ({ allTargets, currentTarget }) => {
-    console.log(allTargets)
-    console.log(currentTarget)
     return(
-        <div>
+        <div className='choose-target-div'>
             <h2>Choose Target</h2>
             <div className='targets'>
                 {allTargets.map((theTarget) => (
                     <TheTarget key={theTarget} theTarget={theTarget} />
                 ))}
             </div>
-            <div>{currentTarget}</div>
+            <div className='current-target'>Target Chosen: {currentTarget}</div>
             <Link to='/game-page'>
                 <button>Start the game</button>
             </Link>
