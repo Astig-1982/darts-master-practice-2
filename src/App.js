@@ -14,21 +14,11 @@ import { selectCurrentTarget } from './redux/target/target.selectors';
 class App extends React.Component {
 
   render() {
-  console.log(this.props.currentTarget)
   return (
       <div>
         <Route exact path='/' component={ HomePage } />
         <Route exact path='/choose-target' component={ chooseTarget } />
-        <Route 
-            exact 
-            path='/game-page' 
-            render={() => this.props.currentTarget ? (
-              <GamePage />) : (
-                <Redirect to='/choose-target' />
-              )
-            } 
-          />
-        
+        <Route exact path='/game-page' component={ GamePage } />
       </div>
     );
   };
@@ -41,6 +31,16 @@ const mapStateToProps = createStructuredSelector({
 // <Redirect to='/choose-target' />
 
 // <Route exact path='/game-page' component={ GamePage } />
+
+//<Route 
+//            exact 
+//            path='/game-page' 
+//            render={() => this.props.currentTarget ? (
+//              <GamePage />) : (
+//                <Redirect hello='hello' to='/choose-target' />
+//              )
+//            } 
+//          />
 
 export default connect(
   mapStateToProps
