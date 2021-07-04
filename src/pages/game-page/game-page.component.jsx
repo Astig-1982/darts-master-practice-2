@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 
-const gamePage = ({ currentTarget, theName }) => {
+const GamePage = ({ currentTarget, theName }) => {
     console.log(currentTarget)
     return(
         <div>
@@ -21,4 +21,4 @@ const mapStateToProps = createStructuredSelector({
    theName: selectTheName
 });
 
-export default connect(mapStateToProps)(gamePage);
+export default connect(mapStateToProps)(GamePage);
