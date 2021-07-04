@@ -17,7 +17,6 @@ import SelectName from '../../components/select-name/select-name.component';
 
 
 const chooseTarget = ({ allTargets, currentTarget, theName }) => {
-    console.log(theName) 
     return(
         <div className='choose-target-div'>
             <SelectName />
