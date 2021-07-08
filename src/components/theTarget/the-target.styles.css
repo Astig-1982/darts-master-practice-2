@@ -6,3 +6,11 @@
     text-align: center;
     display: inline-block;
 }
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: #ffffff;
+}

@@ -3,6 +3,8 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
 
+import SquaresGame from '../../components/squares-game/squares-game.component';
+
 import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 
@@ -18,8 +20,13 @@ class GamePage extends React.Component {
     render() {
     return(
         <div>
-            <h2>Game On {this.props.theName}</h2>
-            <h2>Target {this.props.currentTarget}</h2>
+            <div className='game-details-div'>
+                <h2>Game On {this.props.theName}</h2>
+                <h2>Target {this.props.currentTarget}</h2>
+            </div>
+            <div className='game-results'>
+                <SquaresGame />
+            </div>
         </div>
     );
 }};

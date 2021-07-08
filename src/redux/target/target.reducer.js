@@ -19,4 +19,3 @@ const targetReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default targetReducer;
-
