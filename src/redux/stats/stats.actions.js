@@ -1,4 +1,4 @@
 export const setSquareResults = result => ({
-    type: 'SET_SQUARE_RESULT',
+    type: 'SET_SQUARE_RESULTS',
     payload: result
 });

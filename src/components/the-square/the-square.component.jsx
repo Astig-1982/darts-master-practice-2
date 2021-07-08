@@ -1,15 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { setSquareResults } from '../../redux/stats/stats.actions';
 
 import './the-square.styles.css';
 
-const TheSquare = () => {
+const TheSquare = ({setSquareResults}) => {
     return(
         <input 
             className='the-square'
+            onBlur={e => {{setSquareResults(e.target.value)}}}
         />
     );
 };
 
-export default TheSquare;
+const mapDispatchToProps = dispatch => ({
+    setSquareResults: theResult => dispatch(setSquareResults(theResult))  
+});
+
+export default connect(
+    null,
+    mapDispatchToProps
+    )(TheSquare);
