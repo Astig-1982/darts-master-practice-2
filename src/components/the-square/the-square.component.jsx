@@ -9,7 +9,7 @@ const TheSquare = ({setSquareResults}) => {
     return(
         <input 
             className='the-square'
-            onBlur={e => {{setSquareResults(e.target.value)}}}
+            onBlur={e => {{setSquareResults(parseInt(e.target.value))}}}
         />
     );
 };

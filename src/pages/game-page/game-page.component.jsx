@@ -7,7 +7,7 @@ import SquaresGame from '../../components/squares-game/squares-game.component';
 
 import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
-import { getTheResults } from '../../redux/stats/stats.selectors';
+import { getAverage, getTheResults } from '../../redux/stats/stats.selectors';
 
 class GamePage extends React.Component {
 
@@ -20,6 +20,7 @@ class GamePage extends React.Component {
 
     render() {
     console.log(this.props.theResults)
+    console.log(this.props.theAverage)
     return(
         <div>
             <div className='game-details-div'>
@@ -36,7 +37,8 @@ class GamePage extends React.Component {
 const mapStateToProps = createStructuredSelector({
    currentTarget: selectCurrentTarget,
    theName: selectTheName,
-   theResults: getTheResults
+   theResults: getTheResults,
+   theAverage: getAverage
 });
 
 export default connect(mapStateToProps)(GamePage);
