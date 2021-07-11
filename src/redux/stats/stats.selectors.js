@@ -9,7 +9,13 @@ export const getTheResults = createSelector(
 
 export const getAverage = createSelector(
     [getTheResults], 
-    results => results.reduce((a,b) => a + b, 0) / results.length
+    results => {
+        if (results.length) {
+            return results.reduce((a,b) => a + b, 0) / results.length
+        } else {
+            return 0
+        };
+    }
 );
 
 // const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length
