@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
+
+import './game-page.styles.css';
 
 import SquaresGame from '../../components/squares-game/squares-game.component';
 
@@ -20,7 +21,6 @@ class GamePage extends React.Component {
 
     render() {
     console.log(this.props.theResults)
-    console.log(this.props.theAverage)
     return(
         <div>
             <div className='game-details-div'>
@@ -29,6 +29,9 @@ class GamePage extends React.Component {
             </div>
             <div className='game-results'>
                 <SquaresGame />
+            </div>
+            <div className='the-average-square'>
+                <span className='the-averge-span'>{this.props.theAverage}</span>
             </div>
         </div>
     );
