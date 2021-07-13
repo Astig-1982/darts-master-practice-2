@@ -9,7 +9,7 @@ const TheSquare = ({setSquareResults, theClass}) => {
     console.log(theClass)
     return(
         <input 
-            className={theClass}
+            className={`the-square ${theClass}`}
             onBlur={() => {{setSquareResults(theClass)}}}
         />
     );
