@@ -11,8 +11,8 @@ const GameFinishStats = ({finalAverages}) => {
     console.log(finalAverages)
     return(
         <div className='game-finish-stats'>
-            {finalAverages.map((finalAverage) => (
-                    <FinalAverage key={finalAverage} finalAverage={finalAverage}/>
+            {finalAverages.map((finalAverage, index) => (
+                    <FinalAverage key={index} finalAverage={finalAverage}/>
                 ))}
         </div>
     );
