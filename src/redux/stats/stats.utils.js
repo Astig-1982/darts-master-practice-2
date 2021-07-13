@@ -1,3 +1,5 @@
-export const addTheResults = (squareResults, theResult) => {
-    return [...squareResults, theResult]
+export const addTheResults = (squareResults, theClass) => {
+    const theSquare = document.querySelector(`.${theClass}`);
+    const thePoints = parseInt(theSquare.value);
+    return [...squareResults, thePoints]
 };

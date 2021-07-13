@@ -5,11 +5,12 @@ import { setSquareResults } from '../../redux/stats/stats.actions';
 
 import './the-square.styles.css';
 
-const TheSquare = ({setSquareResults}) => {
+const TheSquare = ({setSquareResults, theClass}) => {
+    console.log(theClass)
     return(
         <input 
-            className='the-square'
-            onBlur={e => {{setSquareResults(parseInt(e.target.value))}}}
+            className={theClass}
+            onBlur={() => {{setSquareResults(theClass)}}}
         />
     );
 };

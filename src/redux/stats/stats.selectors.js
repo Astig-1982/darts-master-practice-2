@@ -7,6 +7,16 @@ export const getTheResults = createSelector(
     results => results.squareResults
 );
 
+export const getTheSquares = createSelector(
+    [getResults], 
+    results => results.allSquares
+);
+
+export const getTheValue = createSelector(
+    [getResults], 
+    results => results.theValue
+);
+
 export const getAverage = createSelector(
     [getTheResults], 
     results => {

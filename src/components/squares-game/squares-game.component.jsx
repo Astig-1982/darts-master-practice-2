@@ -5,25 +5,34 @@ import { createStructuredSelector } from 'reselect';
 import './squares-game.styles.css';
 
 import TheSquare from '../the-square/the-square.component';
+import { getTheSquares } from '../../redux/stats/stats.selectors';
 
 class SquaresGame extends React.Component {
     constructor() {
         super();
 
-        this.state = {
-            allSquares: [1, 2, 3, 4, 5]
-        };
+        
     };
     
     render() {
         return(
             <div className='all-squares'>
-                {this.state.allSquares.map((square) => (
-                    <TheSquare key={square} />
+                {this.props.allSquares.map((square) => (
+                    <TheSquare key={square.id} theClass={square.class}/>
                 ))}
             </div>
         )
     }
 };
 
-export default SquaresGame;
+const mapStateToProps = createStructuredSelector({
+    allSquares: getTheSquares
+ });
+
+//const mapDispatchToProps = dispatch => ({
+//    setCurrentTarget: target => dispatch(setCurrentTarget(target))  
+//});
+
+export default connect(
+    mapStateToProps
+    )(SquaresGame);
