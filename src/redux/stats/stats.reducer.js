@@ -1,29 +1,9 @@
 import statsActionTypes from "./stats.types";
 import { addTheResults } from "./stats.utils";
+import ALL_SQUARES_DATA from "./stats.data";
 
 const INITIAL_STATE = {
-    allSquares: [
-        {
-            id: 1,
-            class: 'first',
-        },
-        {
-            id: 2,
-            class: 'second',
-        },
-        {
-            id: 3,
-            class: 'third',
-        },
-        {
-            id: 4,
-            class: 'fourth',
-        },
-        {
-            id: 5,
-            class: 'fifth',
-        },
-    ],
+    allSquares: ALL_SQUARES_DATA,
     squareResults: [],
 };
 
