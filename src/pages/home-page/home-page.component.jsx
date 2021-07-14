@@ -6,13 +6,13 @@ import './home-page.styles.css';
 const HomePage = () => {
     return(
         <div className='home-page'>
-            <h1>DARTS MASTER PRACTICE II</h1>
+            <h1 className='home-title'>DARTS MASTER PRACTICE II</h1>
             <div className='action-buttons'>
                 <Link to='/choose-target'>
-                    <button className='start-button'>START</button>
+                    <button className='home-action-buttons'>START</button>
                 </Link>
                 <Link to='/about'>
-                    <button className='start-button'>ABOUT</button>
+                    <button className='home-action-buttons'>ABOUT</button>
                 </Link>
             </div>
         </div>
