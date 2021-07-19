@@ -4,6 +4,7 @@ const INITIAL_STATE = {
     gamesFinalStats: [],
     allTheStats: {
         theTarget: '',
+        theGameSet: '',
         theStatsAverage: ''
     }
 }
@@ -16,6 +17,15 @@ const finalStatsReducer = (state = INITIAL_STATE, action) => {
                 allTheStats: {
                     ...state.allTheStats,
                     theTarget: action.payload
+                }
+            }
+
+        case finalStatsActionTypes.THE_SET:
+            return {
+                ...state, // the rest of the state spread
+                allTheStats: {
+                    ...state.allTheStats,
+                    theGameSet: action.payload
                 }
             }
 

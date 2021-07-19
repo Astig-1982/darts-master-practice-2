@@ -11,7 +11,7 @@ import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stats.selectors';
 
-import { finishTheGame, getTheTarget, setTheAverage } from '../../redux/final-stats/final-stats.actions';
+import { finishTheGame, getTheSetNumber, getTheTarget, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
 
 class GamePage extends React.Component {
@@ -20,7 +20,7 @@ class GamePage extends React.Component {
         super();
 
         this.state = {
-            avalue: 9
+            gameSet: 1
         };
     };
 
@@ -31,6 +31,13 @@ class GamePage extends React.Component {
         }
     }
 
+    incrementSet = () => {
+        // this function increments the game number
+        const gameSet = this.state.gameSet;
+        const newSet = gameSet + 1;
+        this.setState({ gameSet: newSet });
+    };
+
     emptyValue = () => {
         {this.props.allSquares.map((square) => (
             document.querySelector(`.${square.class}`).value=''
@@ -39,6 +46,7 @@ class GamePage extends React.Component {
 
     getAllTheStats =() => {
         this.props.getTheTarget(this.props.currentTarget)
+        this.props.getTheSetNumber(this.state.gameSet)
         this.props.setTheAverage(this.props.theAverage)
         this.props.finishTheGame()
         console.log('setting up the stats')
@@ -47,6 +55,7 @@ class GamePage extends React.Component {
     newGame = () => {
         this.props.startAnewGame()
         this.emptyValue()
+        this.incrementSet()
     }
 
     render() {
@@ -55,6 +64,7 @@ class GamePage extends React.Component {
         <div>
             <div className='game-details-div'>
                 <h2>Game On {this.props.theName}</h2>
+                <h2>Set: {this.state.gameSet}</h2>
                 <h2>Target {this.props.currentTarget}</h2>
             </div>
             <div className='game-results'>
@@ -90,6 +100,7 @@ const mapDispatchToProps = dispatch => ({
     finishTheGame: () => dispatch(finishTheGame()),
     getTheTarget: theTarget => dispatch(getTheTarget(theTarget)),
     setTheAverage: finalAverage => dispatch(setTheAverage(finalAverage)),
+    getTheSetNumber: gameSet => dispatch(getTheSetNumber(gameSet)),
     startAnewGame: () => dispatch(startAnewGame())  
 });
 
