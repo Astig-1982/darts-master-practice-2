@@ -11,7 +11,7 @@ import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stats.selectors';
 
-import { finishTheGame } from '../../redux/final-stats/final-stats.actions';
+import { finishTheGame, getTheTarget, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
 
 class GamePage extends React.Component {
@@ -37,10 +37,16 @@ class GamePage extends React.Component {
         ))};
     };
 
+    getAllTheStats =() => {
+        this.props.getTheTarget(this.props.currentTarget)
+        this.props.setTheAverage(this.props.theAverage)
+        this.props.finishTheGame()
+        console.log('setting up the stats')
+    }
+
     newGame = () => {
         this.props.startAnewGame()
         this.emptyValue()
-        console.log('this is a new game')
     }
 
     render() {
@@ -58,11 +64,11 @@ class GamePage extends React.Component {
                 <span className='the-averge-span'>{this.props.theAverage}</span>
             </div>
             <div className='finish'>
-            <button onClick={() => {
-                this.props.finishTheGame(this.props.theAverage)
-                this.newGame()
-                }}>
-                    Finish
+                <button className='finish-button' onClick={() => {
+                    this.getAllTheStats()
+                    this.newGame()
+                    }}>
+                        Finish
                 </button>
             </div>
             <div>
@@ -81,7 +87,9 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-    finishTheGame: finalAverage => dispatch(finishTheGame(finalAverage)),
+    finishTheGame: () => dispatch(finishTheGame()),
+    getTheTarget: theTarget => dispatch(getTheTarget(theTarget)),
+    setTheAverage: finalAverage => dispatch(setTheAverage(finalAverage)),
     startAnewGame: () => dispatch(startAnewGame())  
 });
 
