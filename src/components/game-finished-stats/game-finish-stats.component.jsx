@@ -7,24 +7,20 @@ import FinalAverage from '../final-average/final-average.component';
 
 import './game-finish-stats.styles.css';
 
-const GameFinishStats = ({finalAverages}) => {
-    console.log(finalAverages)
+const GameFinishStats = ({finalStats}) => {
+    console.log(finalStats)
     return(
         <div className='game-finish-stats'>
-            {finalAverages.map((finalAverage, index) => (
-                    <FinalAverage key={index} finalAverage={finalAverage}/>
+           {finalStats.map((finalStat, index) => (
+                    <FinalAverage key={index} finalStat={finalStat}/>
                 ))}
         </div>
     );
 };
 
 const mapStateToProps = createStructuredSelector({
-    finalAverages: showFinalStats
+    finalStats: showFinalStats
  });
-
-//const mapDispatchToProps = dispatch => ({
-//    setName: theName => dispatch(setName(theName))  
-//});
 
 export default connect(
     mapStateToProps
