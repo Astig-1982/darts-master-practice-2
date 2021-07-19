@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ActionButton from '../../components/action-button/action-button.component';
 
 import './home-page.styles.css';
 
@@ -9,10 +10,10 @@ const HomePage = () => {
             <h1 className='home-title'>DARTS MASTER PRACTICE II</h1>
             <div className='action-buttons'>
                 <Link to='/choose-target'>
-                    <button className='home-action-buttons'>START</button>
+                    <ActionButton homeButtons>START</ActionButton>
                 </Link>
                 <Link to='/about'>
-                    <button className='home-action-buttons'>ABOUT</button>
+                    <ActionButton homeButtons>ABOUT</ActionButton>
                 </Link>
             </div>
         </div>

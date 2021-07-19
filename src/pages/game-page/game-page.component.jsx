@@ -13,6 +13,7 @@ import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stat
 
 import { finishTheGame, getTheSetNumber, getTheTarget, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
+import ActionButton from '../../components/action-button/action-button.component';
 
 class GamePage extends React.Component {
 
@@ -74,12 +75,15 @@ class GamePage extends React.Component {
                 <span className='the-averge-span'>{this.props.theAverage}</span>
             </div>
             <div className='finish'>
-                <button className='finish-button' onClick={() => {
-                    this.getAllTheStats()
-                    this.newGame()
-                    }}>
-                        Finish
-                </button>
+                <ActionButton 
+                    finishButton
+                    onClick={() => {
+                        this.getAllTheStats()
+                        this.newGame()
+                        }}
+                >
+                    Finish
+                </ActionButton>
             </div>
             <div>
                 <GameFinishStats />

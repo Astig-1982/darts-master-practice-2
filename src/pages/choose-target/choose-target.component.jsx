@@ -13,6 +13,7 @@ import { selectTheName } from '../../redux/name/name.selectors';
 
 import TheTarget from '../../components/theTarget/the-target.component';
 import SelectName from '../../components/select-name/select-name.component';
+import ActionButton from '../../components/action-button/action-button.component';
 
 
 
@@ -28,7 +29,7 @@ const chooseTarget = ({ allTargets, currentTarget }) => {
             </div>
             <div className='current-target'>Target Chosen: {currentTarget}</div>
             <Link to='/game-page'>
-                <button>Start the game</button>
+                <ActionButton chooseTargetButton>START THE GAME</ActionButton>
             </Link>
         </div>
     );
