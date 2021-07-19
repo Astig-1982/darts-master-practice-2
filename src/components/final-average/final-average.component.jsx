@@ -5,10 +5,11 @@ import { showFinalStats } from '../../redux/final-stats/final-stats.selectors';
 
 import './final-average.styles.css';
 
-const FinalAverage = ({finalAverage}) => {
+const FinalAverage = ({finalStat}) => {
     return(
         <div className='final-average'>
-            {finalAverage}
+            <div><strong>The Target:</strong><span className='stats-spans'>{finalStat.theTarget}</span></div>
+            <div><strong>The Points Average:</strong><span className='stats-spans'>{finalStat.theStatsAverage}</span></div>
         </div>
     );
 };
