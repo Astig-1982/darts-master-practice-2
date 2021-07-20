@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&family=Tinosdisplay=swap');
 
 body {
   font-size: 16px;
   background-color: #aed6dc;
   color: #4a536b;
+  font-family: 'Tinos', serif;
 }
 
 
