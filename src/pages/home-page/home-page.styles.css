@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
 .home-page {
     margin-top: 15rem;
     text-align: center;
@@ -5,7 +7,7 @@
 
 .home-title {
     font-size: 380%;
-    font-family: 'Zen Tokyo Zoo', cursive;
+    font-family: 'Zen Tokyo Zoo', cursive !important;
 }
 
 .action-buttons {
