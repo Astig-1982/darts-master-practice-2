@@ -1,16 +1,26 @@
 .target-holder {
-    width: 20px;
+    width: 2.4rem;
+    height: 2.4rem;
     border: 1px solid #000000;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
     display: inline-block;
+    margin: .6rem;
+    position: relative;
+}
+
+.target {
+    font-size: 126%;
+    position: absolute;
+    top: 16%;
+    right: 24%;
 }
 
 .green {
     background-color: green;
 }
 
-.white {
-    background-color: #ffffff;
+.yellow {
+    background-color: yellow;
 }

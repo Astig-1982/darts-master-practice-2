@@ -1,7 +1,7 @@
 import targetActionTypes from "./target.types";
 
 const INITIAL_STATE = {
-    allTargets: [1,2,3,4,5,6,7,8,9,10],
+    allTargets: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20, 'Bull'],
     currentTarget: null
 }
 

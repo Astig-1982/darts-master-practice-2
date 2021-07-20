@@ -7,7 +7,8 @@ import { setCurrentTarget } from '../../redux/target/target.actions';
 
 const TheTarget = ({ theTarget, setCurrentTarget }) => {
     return(
-        <div className='target-holder' onClick={() => setCurrentTarget(theTarget)}><span className='target'>{theTarget}</span></div>
+        <div className={`${parseInt(theTarget) % 2 ? 'green' : 'yellow'}
+        target-holder`} onClick={() => setCurrentTarget(theTarget)}><span className='target'>{theTarget}</span></div>
     );
 };
 
