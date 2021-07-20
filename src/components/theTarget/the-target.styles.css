@@ -1,26 +1,39 @@
 .target-holder {
-    width: 2.4rem;
-    height: 2.4rem;
-    border: 1px solid #000000;
+    width: 2.9rem;
+    height: 2.9rem;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
     display: inline-block;
     margin: .6rem;
+    opacity: .9;
     position: relative;
+}
+
+.target-holder:hover {
+    opacity: 1;
 }
 
 .target {
     font-size: 126%;
-    position: absolute;
-    top: 16%;
-    right: 24%;
+    position: inherit;
+    top: 23%;
+    text-align: center;
 }
 
-.green {
-    background-color: green;
+.black {
+    background-color: #21211d;
+    color: #f5f17f;
+    border: 2px solid #bd0f0f;
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: #f5f17f;
+    color: #21211d;
+    border: 2px solid #0c7009;
+}
+
+.red {
+    background-color: #bd0f0f;
+    color: #0c7009;
 }
