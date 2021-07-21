@@ -19,10 +19,14 @@ export const getTheValue = createSelector(
 
 export const getAverage = createSelector(
     [getTheResults], 
-    results => {
+    results => { 
         if (results.length) {
-            return results.reduce((a,b) => a + b, 0) / results.length
+            // this function calculates the average of the items in squareResults array and rounds up the result to 1 decimal
+            const result = results.reduce((a,b) => a + b, 0) / results.length
+            const roundResult = result.toFixed(1)
+            return roundResult
         } else {
+            // it returns 0 if there are no items in the squareResults array
             return 0
         };
     }
