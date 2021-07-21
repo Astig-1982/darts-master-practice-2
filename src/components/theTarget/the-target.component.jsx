@@ -13,6 +13,8 @@ const TheTarget = ({ theTarget, setCurrentTarget }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+    // setCurrentTarget will take theTarget and will set it as currentTarget state in target.reducer
+    // it is called when the user clicks on TheTarget component
     setCurrentTarget: target => dispatch(setCurrentTarget(target))  
 });
 

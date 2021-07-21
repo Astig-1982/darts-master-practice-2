@@ -8,10 +8,10 @@ import TheSquare from '../the-square/the-square.component';
 import { getTheSquares } from '../../redux/stats/stats.selectors';
 
 class SquaresGame extends React.Component {
+    // this component maps through all allSquares array pulled from stats.selector
+    // and for each one, it displays TheSquare component
     constructor() {
         super();
-
-        
     };
     
     render() {

@@ -8,7 +8,6 @@ import FinalAverage from '../final-average/final-average.component';
 import './game-finish-stats.styles.css';
 
 const GameFinishStats = ({finalStats}) => {
-    console.log(finalStats)
     return(
         <div className='game-finish-stats'>
            {finalStats.map((finalStat, index) => (
@@ -19,6 +18,7 @@ const GameFinishStats = ({finalStats}) => {
 };
 
 const mapStateToProps = createStructuredSelector({
+    // final stats is the array pulled from final-stats.reducer and it contains all the stats
     finalStats: showFinalStats
  });
 

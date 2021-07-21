@@ -9,7 +9,7 @@ const targetReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case targetActionTypes.SET_TARGET:
             return {
-                ...state, // the rest of the state spread
+                ...state, 
                 currentTarget: action.payload
             }
 

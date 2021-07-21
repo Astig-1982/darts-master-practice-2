@@ -41,11 +41,10 @@ const mapStateToProps = createStructuredSelector({
     theName: selectTheName 
  });
 
-const mapDispatchToProps = dispatch => ({
-    setCurrentTarget: target => dispatch(setCurrentTarget(target))  
-});
+//const mapDispatchToProps = dispatch => ({
+//    setCurrentTarget: target => dispatch(setCurrentTarget(target))  
+//});
 
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps
     )(chooseTarget);

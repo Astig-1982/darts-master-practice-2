@@ -25,7 +25,9 @@ class GamePage extends React.Component {
         };
     };
 
-    componentDidMount() { 
+    componentDidMount() {
+        // this function redirects you to choose-target page 
+        // if no target is selected when the component mounts 
         if (this.props.currentTarget == null) {
             alert('Please select a target');
             this.props.history.push('/choose-target')
@@ -34,33 +36,36 @@ class GamePage extends React.Component {
 
     incrementSet = () => {
         // this function increments the game number
+        // it is executed in newGame function
         const gameSet = this.state.gameSet;
         const newSet = gameSet + 1;
         this.setState({ gameSet: newSet });
     };
 
     emptyValue = () => {
+        // this function sets the value of each square to null
         {this.props.allSquares.map((square) => (
             document.querySelector(`.${square.class}`).value=''
         ))};
     };
 
     getAllTheStats =() => {
+        // this function executes the actions created in final-stats.actions
+        // it is called when the 'finish' action button is clicked
         this.props.getTheTarget(this.props.currentTarget)
         this.props.getTheSetNumber(this.state.gameSet)
         this.props.setTheAverage(this.props.theAverage)
         this.props.finishTheGame()
-        console.log('setting up the stats')
     }
 
     newGame = () => {
-        this.props.startAnewGame()
+        // this function is called when the 'finish' action button is clicked
+        this.props.startAnewGame() // this action is created in stats.actions and sets the squareResults array to an empty array
         this.emptyValue()
         this.incrementSet()
     }
 
     render() {
-    console.log(this.props.theResults)
     return(
         <div>
             <div className='game-details-div'>
