@@ -5,8 +5,10 @@ const INITIAL_STATE = {
     allTheStats: {
         theTarget: '',
         theGameSet: '',
-        theStatsAverage: ''
-    }
+        theStatsAverage: '',
+    },
+    allSquareResults: [], // this array should contain all squareResults arrays from stats.reducer state
+    sumOfAllSquareResultsItems: [] // this array should contain the sums of all squareResults items (the squareResults arrays) contained by allSquareResults array
 }
 
 const finalStatsReducer = (state = INITIAL_STATE, action) => {
@@ -44,6 +46,12 @@ const finalStatsReducer = (state = INITIAL_STATE, action) => {
                 gamesFinalStats: [...state.gamesFinalStats, state.allTheStats]
             }
 
+        case finalStatsActionTypes.PUSH_ALL_SQUARE_RESULTS:
+            return {
+                ...state, // the rest of the state spread
+                allSquareResults: [...state.allSquareResults, action.payload]
+            }
+    
         default:
             return state;
     };

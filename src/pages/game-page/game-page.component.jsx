@@ -11,9 +11,10 @@ import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stats.selectors';
 
-import { finishTheGame, getTheSetNumber, getTheTarget, setTheAverage } from '../../redux/final-stats/final-stats.actions';
+import { finishTheGame, getTheSetNumber, getTheTarget, pushAllSquareResults, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
 import ActionButton from '../../components/action-button/action-button.component';
+import { allSquareResults } from '../../redux/final-stats/final-stats.selectors';
 
 class GamePage extends React.Component {
 
@@ -55,6 +56,7 @@ class GamePage extends React.Component {
         this.props.getTheTarget(this.props.currentTarget)
         this.props.getTheSetNumber(this.state.gameSet)
         this.props.setTheAverage(this.props.theAverage)
+        this.props.pushAllSquares(this.props.theResults)
         this.props.finishTheGame()
     }
 
@@ -66,18 +68,19 @@ class GamePage extends React.Component {
     }
 
     render() {
+        console.log(this.props.allTheSquareResults)
     return(
         <div>
             <div className='game-details-div'>
                 <h2>Game On {this.props.theName}</h2>
-                <h2>Set: {this.state.gameSet}</h2>
+                <h2>Set {this.state.gameSet}</h2>
                 <h2>Target {this.props.currentTarget}</h2>
             </div>
             <div className='game-results'>
                 <SquaresGame />
             </div>
             <div className='the-average-square'>
-                <span className='the-averge-span'>{this.props.theAverage}</span>
+                <span className='the-average-span'>{this.props.theAverage}</span>
             </div>
             <div className='finish'>
                 <ActionButton 
@@ -102,7 +105,8 @@ const mapStateToProps = createStructuredSelector({
    theName: selectTheName,
    theResults: getTheResults,
    theAverage: getAverage,
-   allSquares: getTheSquares
+   allSquares: getTheSquares,
+   allTheSquareResults: allSquareResults
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -110,7 +114,8 @@ const mapDispatchToProps = dispatch => ({
     getTheTarget: theTarget => dispatch(getTheTarget(theTarget)),
     setTheAverage: finalAverage => dispatch(setTheAverage(finalAverage)),
     getTheSetNumber: gameSet => dispatch(getTheSetNumber(gameSet)),
-    startAnewGame: () => dispatch(startAnewGame())  
+    startAnewGame: () => dispatch(startAnewGame()),
+    pushAllSquares: squareResults => dispatch(pushAllSquareResults(squareResults)) 
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(GamePage);

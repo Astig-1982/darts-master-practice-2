@@ -2,5 +2,8 @@
     width: 2rem;
     height: 2rem;
     border: 1px solid #000000;
+    color: #4a536b;
     margin: 1rem;
+    font-size: 129%;
+    text-align: center;
 }

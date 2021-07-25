@@ -6,3 +6,8 @@ export const showFinalStats = createSelector(
     [showStats], 
     finalStats => finalStats.gamesFinalStats
 );
+
+export const allSquareResults = createSelector(
+    [showStats], 
+    finalStats => finalStats.allSquareResults
+);

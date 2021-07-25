@@ -1,6 +1,6 @@
 .choose-target-div {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 10%;
 }
 
 .targets {
@@ -9,4 +9,5 @@
 
 .current-target {
     margin-bottom: 2rem;
+    font-size: 130%;
 }

@@ -16,3 +16,8 @@ export const setTheAverage = finalAverage => ({
     type: 'SET_AVERAGE',
     payload: finalAverage
 });
+
+export const pushAllSquareResults = squareResults => ({
+    type: 'PUSH_ALL_SQUARE_RESULTS',
+    payload: squareResults
+});

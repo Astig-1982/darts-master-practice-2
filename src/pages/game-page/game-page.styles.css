@@ -1,18 +1,25 @@
 .game-details-div {
     text-align: center;
+    margin-top: 5%;
 }
 
 .the-average-square {
     width: 3rem;
     height: 3rem;
+    background-color: #4a536b;
+    color: #ffffff;
     margin: 0 auto;
     margin-top: 2.5rem;
     border: 2px solid #000000;
     text-align: center;
+    position: relative;
 }
 
 .the-average-span {
     font-weight: 400;
+    font-size: 205%;
+    position: inherit;
+    top: 9%;
 }
 
 .finish {
