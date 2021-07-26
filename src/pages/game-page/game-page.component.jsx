@@ -33,6 +33,7 @@ class GamePage extends React.Component {
             alert('Please select a target');
             this.props.history.push('/choose-target')
         }
+        
     }
 
     incrementSet = () => {
@@ -97,9 +98,10 @@ class GamePage extends React.Component {
                 </ActionButton>
             </div>
             <div className='the-heighest-array'>
-                {this.props.heighestArray.map((eachHeighestResult) => (
-                    <span className='eachHeighesResult'>{eachHeighestResult}</span>
-                ))}
+                <h3>Best Set Entries:</h3>
+                {this.props.heighestArray ? this.props.heighestArray.map((eachHeighestResult) => (
+                    <span className='eachHeighestResult'>{eachHeighestResult}</span>
+                )): <span className='eachHeighestResult'>NO ENTRIES SO FAR</span> }
             </div>
             <div>
                 <GameFinishStats />
@@ -107,6 +109,8 @@ class GamePage extends React.Component {
         </div>
     );
 }};
+
+// <div id={if (condition) { 'msg' }}>Hello World!</div>
 
 const mapStateToProps = createStructuredSelector({
    currentTarget: selectCurrentTarget,

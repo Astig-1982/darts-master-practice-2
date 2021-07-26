@@ -29,9 +29,10 @@
 
 .the-heighest-array {
     text-align: center;
+    margin-top: 2rem;
 }
 
-.eachHeighesResult {
+.eachHeighestResult {
     margin: 1rem;
     font-size: 140%;
     font-weight: 700;

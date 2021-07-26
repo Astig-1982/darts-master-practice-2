@@ -57,6 +57,7 @@ const finalStatsReducer = (state = INITIAL_STATE, action) => {
 
         case finalStatsActionTypes.PUSH_SUM_ALL_SQUARE_RESULTS:
             // this calculates the sum of each item (array) of allSquareResults and pushes each sum to sumOfAllSquareResultsItems array
+            // it does this by seting the return of pushSum() function to sumOfAllSquareResultsItems array
             return {
                 ...state, // the rest of the state spread
                 sumOfAllSquareResultsItems: pushSum(state.sumOfAllSquareResultsItems, state.allSquareResults)
