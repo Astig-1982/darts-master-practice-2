@@ -19,7 +19,7 @@ const GameFinishStats = ({finalStats}) => {
 
 const mapStateToProps = createStructuredSelector({
     // final stats is the array pulled from final-stats.reducer and it contains all the stats
-    finalStats: showFinalStats
+    finalStats: showFinalStats,
  });
 
 export default connect(

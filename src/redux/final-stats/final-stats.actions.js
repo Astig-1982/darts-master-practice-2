@@ -21,3 +21,7 @@ export const pushAllSquareResults = squareResults => ({
     type: 'PUSH_ALL_SQUARE_RESULTS',
     payload: squareResults
 });
+
+export const pushSumAllSquareResults = squareResults => ({
+    type: 'PUSH_SUM_ALL_SQUARE_RESULTS'
+});

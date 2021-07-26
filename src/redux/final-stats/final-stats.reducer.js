@@ -1,4 +1,5 @@
 import finalStatsActionTypes from "./final-stats.types";
+import { pushSum } from "./final-stats.utils";
 
 const INITIAL_STATE = {
     gamesFinalStats: [],
@@ -47,9 +48,18 @@ const finalStatsReducer = (state = INITIAL_STATE, action) => {
             }
 
         case finalStatsActionTypes.PUSH_ALL_SQUARE_RESULTS:
+            // the action.payload here is the squareResults array from stats.reducer
+            // it performed in game-page component
             return {
                 ...state, // the rest of the state spread
                 allSquareResults: [...state.allSquareResults, action.payload]
+            }
+
+        case finalStatsActionTypes.PUSH_SUM_ALL_SQUARE_RESULTS:
+            // this calculates the sum of each item (array) of allSquareResults and pushes each sum to sumOfAllSquareResultsItems array
+            return {
+                ...state, // the rest of the state spread
+                sumOfAllSquareResultsItems: pushSum(state.sumOfAllSquareResultsItems, state.allSquareResults)
             }
     
         default:

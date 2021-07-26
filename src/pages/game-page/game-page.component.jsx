@@ -11,10 +11,10 @@ import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
 import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stats.selectors';
 
-import { finishTheGame, getTheSetNumber, getTheTarget, pushAllSquareResults, setTheAverage } from '../../redux/final-stats/final-stats.actions';
+import { finishTheGame, getTheSetNumber, getTheTarget, pushAllSquareResults, pushSumAllSquareResults, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
 import ActionButton from '../../components/action-button/action-button.component';
-import { allSquareResults } from '../../redux/final-stats/final-stats.selectors';
+import { allSquareResults, allSumResults, theHeighestArray } from '../../redux/final-stats/final-stats.selectors';
 
 class GamePage extends React.Component {
 
@@ -56,7 +56,8 @@ class GamePage extends React.Component {
         this.props.getTheTarget(this.props.currentTarget)
         this.props.getTheSetNumber(this.state.gameSet)
         this.props.setTheAverage(this.props.theAverage)
-        this.props.pushAllSquares(this.props.theResults)
+        this.props.pushAllSquares(this.props.theResults) // this action pushes squareResults pulled from stats.reducer into allSquareResults from final-stats reducer
+        this.props.pushSumAllSquareResults()
         this.props.finishTheGame()
     }
 
@@ -69,6 +70,8 @@ class GamePage extends React.Component {
 
     render() {
         console.log(this.props.allTheSquareResults)
+        console.log(this.props.allSumResults)
+        console.log(this.props.heighestArray)
     return(
         <div>
             <div className='game-details-div'>
@@ -93,6 +96,11 @@ class GamePage extends React.Component {
                     Finish
                 </ActionButton>
             </div>
+            <div className='the-heighest-array'>
+                {this.props.heighestArray.map((eachHeighestResult) => (
+                    <span className='eachHeighesResult'>{eachHeighestResult}</span>
+                ))}
+            </div>
             <div>
                 <GameFinishStats />
             </div>
@@ -106,7 +114,9 @@ const mapStateToProps = createStructuredSelector({
    theResults: getTheResults,
    theAverage: getAverage,
    allSquares: getTheSquares,
-   allTheSquareResults: allSquareResults
+   allTheSquareResults: allSquareResults,
+   allSumResults: allSumResults,
+   heighestArray: theHeighestArray
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -115,7 +125,8 @@ const mapDispatchToProps = dispatch => ({
     setTheAverage: finalAverage => dispatch(setTheAverage(finalAverage)),
     getTheSetNumber: gameSet => dispatch(getTheSetNumber(gameSet)),
     startAnewGame: () => dispatch(startAnewGame()),
-    pushAllSquares: squareResults => dispatch(pushAllSquareResults(squareResults)) 
+    pushAllSquares: squareResults => dispatch(pushAllSquareResults(squareResults)),
+    pushSumAllSquareResults: () => dispatch(pushSumAllSquareResults()) 
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(GamePage);
