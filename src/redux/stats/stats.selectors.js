@@ -17,6 +17,11 @@ export const getTheValue = createSelector(
     results => results.theValue
 );
 
+export const valueIsNaN = createSelector(
+    [getResults], 
+    results => results.valueIsNaN
+);
+
 export const getAverage = createSelector(
     [getTheResults], 
     results => { 
@@ -31,5 +36,3 @@ export const getAverage = createSelector(
         };
     }
 );
-
-// const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length
