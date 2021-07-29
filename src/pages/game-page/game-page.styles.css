@@ -4,8 +4,8 @@
 }
 
 .the-average-square {
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
     background-color: #4a536b;
     color: #ffffff;
     margin: 0 auto;
@@ -19,7 +19,7 @@
     font-weight: 400;
     font-size: 205%;
     position: inherit;
-    top: 9%;
+    top: 14%;
 }
 
 .finish {
@@ -34,6 +34,14 @@
 
 .eachHeighestResult {
     margin: 1rem;
+    padding: .1rem .49rem;
+    background-color: #4a536b;
     font-size: 140%;
     font-weight: 700;
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.red {
+    background-color: red;
 }
