@@ -9,7 +9,7 @@ import GameFinishStats from '../../components/game-finished-stats/game-finish-st
 
 import { selectCurrentTarget } from '../../redux/target/target.selectors';
 import { selectTheName } from '../../redux/name/name.selectors';
-import { getAverage, getTheResults, getTheSquares } from '../../redux/stats/stats.selectors';
+import { getAverage, getTheResults, getTheSquares, valueIsNaN } from '../../redux/stats/stats.selectors';
 
 import { finishTheGame, getTheSetNumber, getTheTarget, pushAllSquareResults, pushSumAllSquareResults, setTheAverage } from '../../redux/final-stats/final-stats.actions';
 import { startAnewGame } from '../../redux/stats/stats.actions';
@@ -70,6 +70,7 @@ class GamePage extends React.Component {
     }
 
     render() {
+        console.log(this.props.theResults)
         console.log(this.props.allTheSquareResults)
         console.log(this.props.allSumResults)
         console.log(this.props.heighestArray)
@@ -83,7 +84,7 @@ class GamePage extends React.Component {
             <div className='game-results'>
                 <SquaresGame />
             </div>
-            <div className='the-average-square'>
+            <div className={`${this.props.valueIsNaN ? 'red' : null} the-average-square`}>
                 <span className='the-average-span'>{this.props.theAverage}</span>
             </div>
             <div className='finish'>
@@ -120,7 +121,8 @@ const mapStateToProps = createStructuredSelector({
    allSquares: getTheSquares,
    allTheSquareResults: allSquareResults,
    allSumResults: allSumResults,
-   heighestArray: theHeighestArray
+   heighestArray: theHeighestArray,
+   valueIsNaN: valueIsNaN
 });
 
 const mapDispatchToProps = dispatch => ({
