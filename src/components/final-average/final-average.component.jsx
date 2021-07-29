@@ -1,11 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { showFinalStats } from '../../redux/final-stats/final-stats.selectors';
 
 import './final-average.styles.css';
 
 const FinalAverage = ({finalStat}) => {
+    // this will display all the stats
     return(
         <div className='final-average'>
             <div><strong>The Set Number:</strong><span className='stats-spans'>{finalStat.theGameSet}</span></div>
