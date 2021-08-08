@@ -6,7 +6,7 @@
 This app is creted in order to test my understanding of React and Redux.
 
 ## How it works:
-The app calculates the average of succesful darts that reach the target out of 10 darts thrown. The user will choose a target from the darts board he/she wants to practice and can input in the app how many darts have reached the target. A set consists in 10 throws and a game consists in 10 sets. At the end, the user will have displayed the average of how many of those darts have reached the target.
+The app calculates the average of succesful darts that reach the target out of 9 darts thrown. The user will choose a target from the darts board he/she wants to practice and can input in the app how many darts have reached the target. A set consists in 9 throws and a game consists in 5 sets. At the end, the user will have displayed the average of how many of those darts have reached the target.
 
 ## User stories:
 * As a user I would like an app where I can input the number of succesful darts that reached the target.
