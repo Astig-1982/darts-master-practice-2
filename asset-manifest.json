@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/darts-master-practice-2/static/css/main.ed2b2037.chunk.css",
+    "main.js": "/darts-master-practice-2/static/js/main.8b074aff.chunk.js",
+    "main.js.map": "/darts-master-practice-2/static/js/main.8b074aff.chunk.js.map",
+    "runtime-main.js": "/darts-master-practice-2/static/js/runtime-main.2d7ec12d.js",
+    "runtime-main.js.map": "/darts-master-practice-2/static/js/runtime-main.2d7ec12d.js.map",
+    "static/js/2.c1aa5a3c.chunk.js": "/darts-master-practice-2/static/js/2.c1aa5a3c.chunk.js",
+    "static/js/2.c1aa5a3c.chunk.js.map": "/darts-master-practice-2/static/js/2.c1aa5a3c.chunk.js.map",
+    "static/js/3.7719b425.chunk.js": "/darts-master-practice-2/static/js/3.7719b425.chunk.js",
+    "static/js/3.7719b425.chunk.js.map": "/darts-master-practice-2/static/js/3.7719b425.chunk.js.map",
+    "index.html": "/darts-master-practice-2/index.html",
+    "static/css/main.ed2b2037.chunk.css.map": "/darts-master-practice-2/static/css/main.ed2b2037.chunk.css.map",
+    "static/js/2.c1aa5a3c.chunk.js.LICENSE.txt": "/darts-master-practice-2/static/js/2.c1aa5a3c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d7ec12d.js",
+    "static/js/2.c1aa5a3c.chunk.js",
+    "static/css/main.ed2b2037.chunk.css",
+    "static/js/main.8b074aff.chunk.js"
+  ]
+}
