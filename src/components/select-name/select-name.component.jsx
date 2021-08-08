@@ -16,6 +16,7 @@ const SelectName = ({ setName }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+    // this action takes the name inputed in the input field and takes it to name.reducer
     setName: theName => dispatch(setName(theName))  
 });
 

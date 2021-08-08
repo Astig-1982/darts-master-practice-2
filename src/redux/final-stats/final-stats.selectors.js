@@ -18,16 +18,13 @@ export const allSumResults = createSelector(
 );
 
 export const theHeighestArray = createSelector(
-    [allSquareResults, allSumResults], 
+    // this selector returns the item (array) from the allSquareResults wich sum is the heighest
+
+    // it takes the ouput of allSquareResult selector (which is the allSquareResults array) and it applies find() method
+    // the find() method will return the item from allSquareResults array whose sum equals the heighest sum from allSumResults array 
+    [allSquareResults, allSumResults],  
     (allSquareResults, allSumResults) => allSquareResults.find((item) => {
         return item.reduce(function (a, b) { return a + b; }, 0) === Math.max(...allSumResults)
-    })
+    }) // basically the output of this selector will be the item found by find() method applied to allSquareResults
 );
-
-//export const theHeighestArray = createSelector(
-//    [showStats, allSumResults], 
-//    (allSquareResults, allSumResults) => allSquareResults.allSquareResults.find((item) => {
-//        return item.reduce(function (a, b) { return a + b; }, 0) === Math.max(...allSumResults)
-//    })
-//);
 
